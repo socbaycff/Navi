@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/oneFragment">
+
+    <fragment
+        android:id="@+id/oneFragment"
+        android:name="com.example.navi.OneFragment"
+        android:label="fragment_one"
+        tools:layout="@layout/fragment_one" >
+        <action
+            android:id="@+id/oneToTwoo"
+            app:destination="@id/twoFragment"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/twoFragment"
+        android:name="com.example.navi.TwoFragment"
+        android:label="fragment_two"
+        tools:layout="@layout/fragment_two" >
+        <action
+            android:id="@+id/haiQuaBa"
+            app:destination="@id/thirdFragment"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"
+            app:popUpTo="@+id/oneFragment" />
+        <action
+            android:id="@+id/haiQuaBon"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"
+            app:destination="@id/fourthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.navi.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/baVeMot"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"
+            app:destination="@id/oneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.example.navi.FourthFragment"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_fourth" >
+        <action
+            android:id="@+id/action_fourthFragment_to_main2Activity"
+            app:destination="@id/main2Activity" />
+    </fragment>
+    <activity
+        android:id="@+id/main2Activity"
+        android:name="com.example.navi.Main2Activity"
+        android:label="activity_main2"
+        tools:layout="@layout/activity_main2" />
+</navigation>
